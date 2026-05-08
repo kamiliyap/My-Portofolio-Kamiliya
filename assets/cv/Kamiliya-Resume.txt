@@ -1,0 +1,39 @@
+KAMILIYA PRASMAISYA
+Junior Full Stack Web Developer
+
+Contact
+- Email: kamiliyaprasmaisya@gmail.com
+- LinkedIn: linkedin.com/in/kamiliya-latifah-prasmaisya-a54786228
+- GitHub: github.com/kamiliyap
+
+Professional Summary
+Junior Full Stack Web Developer with experience building PHP and MySQL-based web applications.
+Experienced in developing sales order systems, dashboards, and responsive websites for business needs.
+
+Tech Stack
+- PHP
+- Laravel
+- MySQL
+- JavaScript
+- HTML5
+- CSS3
+- Bootstrap
+- Leaflet.js
+- QGIS
+
+Experience
+Programmer Intern - Sonokembang Harum Jaya Catering (2025 - Present)
+- Developed a web-based sales order system for catering operations.
+- Built marketing dashboard features using PHP and MySQL.
+- Managed customer and transaction database workflows.
+
+Projects
+- Sales Order System - Sonokembang Catering
+- Company Profile Website - Komunitas Aerox
+- Web GIS Peta Tematik DKI Jakarta
+
+Certifications
+- Junior Programmer - BNSP
+- Python for Data Science - IBM
+- AI Enterprise Solutions - IBM
+- Red Hat Certified System Administrator
