@@ -1,0 +1,51 @@
+<?php
+$certifications = [
+    [
+        'title' => 'BNSP - Junior Web Programmer',
+        'issuer' => 'BNSP',
+        'year' => '2026',
+        'icon' => 'bi-patch-check-fill',
+        'image' => null,
+        'links' => ['drive' => null, 'credly' => null, 'download' => null, 'view' => null],
+    ],
+    [
+        'title' => 'Sertifikat Pelatihan PPKPI Jakarta Timur - Web Junior Programmer',
+        'issuer' => 'PPKPI Jakarta Timur',
+        'year' => '2025',
+        'icon' => 'bi-mortarboard-fill',
+        'image' => null,
+        'links' => ['drive' => null, 'credly' => null, 'download' => null, 'view' => null],
+    ],
+    [
+        'title' => 'Red Hat Certified System Administrator (RHCSA)',
+        'issuer' => 'Red Hat, Inc.',
+        'year' => '2023',
+        'icon' => 'bi-hdd-network-fill',
+        'image' => null,
+        'links' => ['drive' => null, 'credly' => null, 'download' => null, 'view' => null],
+    ],
+    [
+        'title' => 'Python for Data Science',
+        'issuer' => 'IBM',
+        'year' => '2023',
+        'icon' => 'bi-bar-chart-fill',
+        'image' => null,
+        'links' => ['drive' => null, 'credly' => null, 'download' => null, 'view' => null],
+    ],
+    [
+        'title' => 'Enterprise Security in Practice',
+        'issuer' => 'IBM',
+        'year' => '2023',
+        'icon' => 'bi-shield-lock-fill',
+        'image' => null,
+        'links' => ['drive' => null, 'credly' => null, 'download' => null, 'view' => null],
+    ],
+    [
+        'title' => 'MSIB Batch 5 - Red Hat System Administrator & IBM Cybersecurity',
+        'issuer' => 'Kampus Merdeka / Infinite Learning',
+        'year' => '2024',
+        'icon' => 'bi-award-fill',
+        'image' => null,
+        'links' => ['drive' => null, 'credly' => null, 'download' => null, 'view' => null],
+    ],
+];

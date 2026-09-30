@@ -1,4 +1,8 @@
-<?php $currentPage = 'home'; ?>
+<?php
+$currentPage = 'home';
+$cvFile = 'download-cv.php';
+require __DIR__ . '/includes/certifications-data.php';
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -14,7 +18,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/style-navbar.css">
     <link rel="stylesheet" href="assets/css/style-site.css">
+    <link rel="stylesheet" href="assets/css/robot.css">
     <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/robot.js" defer></script>
 </head>
 <body data-page="home">
     <?php include 'navbar.html'; ?>
@@ -26,7 +32,7 @@
                     <span class="hero-tech-lines"></span>
                     <span class="hero-tech-lines-right"></span>
                     <div class="hero-dark-content">
-                        <span class="eyebrow" data-i18n="home.heroBanner.eyebrow">KAMILIYA PRASMAISYA</span>
+                        <span class="eyebrow" data-i18n="home.heroBanner.eyebrow">KAMILIYA LATIFAH PRASMAISYA</span>
                         <h1 class="hero-title-single" data-i18n-html="home.heroBanner.title"><span class="hero-intro">Hay! I'm</span> Kamiliya I'm a Developer</h1>
                         <div class="hero-dark-summary">
                             <p class="hero-dark-text" data-i18n="home.heroBanner.text">
@@ -36,8 +42,10 @@
                         </div>
                         <div class="hero-banner-actions">
                             <a class="button-primary" href="contact.php"><i class="bi bi-send"></i> <span data-i18n="home.heroBanner.cta">GET IN TOUCH</span></a>
+                            <a class="button-secondary hero-download-link" href="<?php echo htmlspecialchars($cvFile, ENT_QUOTES, 'UTF-8'); ?>" download><i class="bi bi-download"></i> Download CV</a>
                             <a class="button-secondary hero-secondary-link" href="about.php">Open About</a>
                         </div>
+                        <p class="hero-download-note">HRD dapat langsung mengunduh CV terbaru dalam format PDF dari halaman ini.</p>
                         <div class="hero-socials">
                             <span>Find me on</span>
                             <div class="hero-social-links">
@@ -126,6 +134,46 @@
                     <div><span>Fokus</span><strong>PHP, MySQL, UI Responsif</strong></div>
                 </div>
             </section>
+        </section>
+
+        <section id="certifications" class="certifications-home panel reveal-on-scroll">
+            <div class="section-heading split-heading certifications-heading">
+                <div>
+                    <p class="section-kicker" data-i18n="home.certifications.kicker">Certifications</p>
+                    <h2 data-i18n="home.certifications.title">Sertifikasi yang memperkuat pengalaman teknis dan kesiapan kerja saya.</h2>
+                </div>
+                <div>
+                    <p class="certifications-intro" data-i18n="home.certifications.text">Sertifikasi dan pelatihan dalam pengembangan web, administrasi sistem, data, dan keamanan siber.</p>
+                    <a class="button-secondary small-button" href="certifications.php" data-i18n="certifications.viewAll">Lihat Semua Sertifikat</a>
+                </div>
+            </div>
+            <div class="certifications-grid">
+                <?php foreach ($certifications as $certificate): ?>
+                    <?php
+                    $certificateUrl = $certificate['links']['view']
+                        ?? $certificate['links']['drive']
+                        ?? $certificate['links']['credly']
+                        ?? $certificate['links']['download']
+                        ?? '#';
+                    $certificateAvailable = $certificateUrl !== '#';
+                    ?>
+                    <article class="certification-entry reveal-on-scroll">
+                        <div class="certification-badge" aria-hidden="true">
+                            <i class="bi <?php echo htmlspecialchars($certificate['icon'], ENT_QUOTES, 'UTF-8'); ?>"></i>
+                        </div>
+                        <div class="certification-copy">
+                            <h3><?php echo htmlspecialchars($certificate['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
+                            <div class="certification-meta-list">
+                                <p><span data-i18n="home.certifications.issuerLabel">Issuer</span><strong><?php echo htmlspecialchars($certificate['issuer'], ENT_QUOTES, 'UTF-8'); ?></strong></p>
+                                <p><span data-i18n="home.certifications.yearLabel">Year</span><strong><?php echo htmlspecialchars($certificate['year'], ENT_QUOTES, 'UTF-8'); ?></strong></p>
+                            </div>
+                        </div>
+                        <div class="certification-actions">
+                            <a class="button-primary small-button certification-button<?php echo $certificateAvailable ? '' : ' is-disabled'; ?>" href="<?php echo htmlspecialchars($certificateUrl, ENT_QUOTES, 'UTF-8'); ?>" <?php echo $certificateAvailable ? 'target="_blank" rel="noreferrer"' : 'aria-disabled="true" tabindex="-1"'; ?> data-i18n="home.certifications.viewCta">View Certificate</a>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
         </section>
 
         <section class="contact-home panel contact-home-banner">

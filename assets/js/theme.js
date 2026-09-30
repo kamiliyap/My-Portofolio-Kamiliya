@@ -9,6 +9,16 @@ const translations = {
     'nav.home': 'Home',
     'nav.about': 'About',
     'nav.projects': 'Projects',
+    'nav.certifications': 'Certifications',
+    'meta.certifications.title': 'Sertifikat | Kamiliya',
+    'meta.certifications.description': 'Sertifikasi Kamiliya dalam web development, administrasi sistem, dan keamanan siber.',
+    'certifications.eyebrow': 'Sertifikat',
+    'certifications.title': 'Belajar, berkembang, dan membuktikan kompetensi.',
+    'certifications.description': 'Sertifikasi dan pelatihan saya dalam pengembangan web, administrasi sistem, data, dan keamanan siber.',
+    'certifications.collection': 'Koleksi Sertifikat',
+    'certifications.listTitle': 'Sertifikasi dan pelatihan',
+    'certifications.unavailable': 'Dokumen belum tersedia',
+    'certifications.viewAll': 'Lihat Semua Sertifikat',
     'nav.services': 'Services',
     'nav.testimonials': 'Testimonials',
     'nav.contact': 'Contact',
@@ -57,7 +67,7 @@ const translations = {
     'home.hero.metricOne': 'Sertifikasi Junior Programming',
     'home.hero.metricTwo': 'Project nyata dan akademik',
     'home.hero.metricThree': 'Frontend dan backend berbasis PHP',
-    'home.heroBanner.eyebrow': 'KAMILIYA PRASMAISYA',
+    'home.heroBanner.eyebrow': 'KAMILIYA LATIFAH PRASMAISYA',
     'home.heroBanner.title': "<span class=\"hero-intro\">Hay! I'm</span> Kamiliya I'm a Developer",
     'home.heroBanner.text': 'Junior Fullstack Web Developer yang fokus membangun website responsif, performa cepat, dan backend PHP + MySQL yang siap dipakai untuk kebutuhan bisnis.',
     'home.heroBanner.cta': 'GET IN TOUCH',
@@ -103,6 +113,12 @@ const translations = {
     'home.contact.github': '<strong>GitHub:</strong> github.com/kamiliyap',
     'home.contact.emailCta': 'Email Me',
     'home.contact.pageCta': 'Open Contact Page',
+    'home.certifications.kicker': 'Certifications',
+    'home.certifications.title': 'Sertifikasi yang memperkuat pengalaman teknis dan kesiapan kerja saya.',
+    'home.certifications.text': 'Sertifikasi dan pelatihan dalam pengembangan web, administrasi sistem, data, dan keamanan siber.',
+    'home.certifications.issuerLabel': 'Issuer',
+    'home.certifications.yearLabel': 'Year',
+    'home.certifications.viewCta': 'View Certificate',
     'about.heading.eyebrow': 'About',
     'about.heading.title': 'Junior Fullstack Developer dengan sertifikasi resmi dan pengalaman project nyata.',
     'about.heading.text': 'Saya tidak hanya belajar dari latihan, tetapi juga membangun sistem dan website yang sudah relevan untuk kebutuhan bisnis, organisasi, dan project pelatihan kerja.',
@@ -193,6 +209,7 @@ const translations = {
     'nav.home': 'Home',
     'nav.about': 'About',
     'nav.projects': 'Projects',
+    'nav.certifications': 'Certifications',
     'nav.services': 'Services',
     'nav.testimonials': 'Testimonials',
     'nav.contact': 'Contact',
@@ -241,7 +258,7 @@ const translations = {
     'home.hero.metricOne': 'Junior Programming certification',
     'home.hero.metricTwo': 'Real and academic projects',
     'home.hero.metricThree': 'PHP-based frontend and backend',
-    'home.heroBanner.eyebrow': 'KAMILIYA PRASMAISYA',
+    'home.heroBanner.eyebrow': 'KAMILIYA LATIFAH PRASMAISYA',
     'home.heroBanner.title': "<span class=\"hero-intro\">Hi! I'm</span> Kamiliya I'm a Developer",
     'home.heroBanner.text': 'Junior Fullstack Web Developer focused on building responsive websites, fast performance, and PHP + MySQL backends ready for business needs.',
     'home.heroBanner.cta': 'GET IN TOUCH',
@@ -287,6 +304,21 @@ const translations = {
     'home.contact.github': '<strong>GitHub:</strong> github.com/kamiliyap',
     'home.contact.emailCta': 'Email Me',
     'home.contact.pageCta': 'Open Contact Page',
+    'home.certifications.kicker': 'Certifications',
+    'home.certifications.title': 'Certifications that reinforce my technical experience and job readiness.',
+    'home.certifications.text': 'Certifications and training in web development, system administration, data, and cybersecurity.',
+    'meta.certifications.title': 'Certifications | Kamiliya',
+    'meta.certifications.description': 'Kamiliya’s certifications in web development, system administration, and cybersecurity.',
+    'certifications.eyebrow': 'Certifications',
+    'certifications.title': 'Learning, growing, and demonstrating skills.',
+    'certifications.description': 'My certifications and training in web development, system administration, data, and cybersecurity.',
+    'certifications.collection': 'Certificate Collection',
+    'certifications.listTitle': 'Certifications and training',
+    'certifications.unavailable': 'Document not yet available',
+    'certifications.viewAll': 'View All Certificates',
+    'home.certifications.issuerLabel': 'Issuer',
+    'home.certifications.yearLabel': 'Year',
+    'home.certifications.viewCta': 'View Certificate',
     'about.heading.eyebrow': 'About',
     'about.heading.title': 'A Junior Fullstack Developer with official certification and real project experience.',
     'about.heading.text': 'I have not only learned through exercises, but also built systems and websites that are already relevant for business, organizational, and workforce training needs.',
@@ -605,6 +637,8 @@ const chatboxForm = document.getElementById('chatbox-form');
 const chatboxInput = document.getElementById('chatbox-input');
 const chatboxQuickQuestions = document.querySelectorAll('.chatbox-chip');
 let chatHistory = [];
+let chatSession = 0;
+let chatBusy = false;
 
 if (chatboxToggle && chatboxPanel && chatboxMessages) {
   let hasRenderedGreeting = false;
@@ -632,12 +666,12 @@ if (chatboxToggle && chatboxPanel && chatboxMessages) {
       event.preventDefault();
       const question = chatboxInput.value.trim();
 
-      if (!question) {
+      if (!question || chatBusy) {
         return;
       }
 
-      await handleChatQuestion(question);
       chatboxInput.value = '';
+      await handleChatQuestion(question);
     });
   }
 
@@ -648,14 +682,33 @@ if (chatboxToggle && chatboxPanel && chatboxMessages) {
   });
 
   renderChatGreeting = async function renderChatGreetingMessage() {
+    const session = ++chatSession;
     chatboxMessages.innerHTML = '';
     chatHistory = [];
+    setChatBusy(false);
+    hasRenderedGreeting = false;
+    if (chatboxPanel.hidden) {
+      return;
+    }
 
-    const conversation = await fetchDemoConversation();
-    conversation.forEach((message) => {
-      appendChatMessage(message.text, message.sender);
-    });
+    hasRenderedGreeting = true;
+    setChatBusy(true);
+    const loadingMessage = appendTemporaryLoadingMessage();
+    await new Promise((resolve) => setTimeout(resolve, 900));
+    if (session !== chatSession) return;
+    loadingMessage.remove();
+    const greeting = translations[currentLanguage]['chat.greeting'];
+    appendChatMessage(greeting, 'bot');
+    chatHistory.push({ sender: 'bot', text: greeting });
+    setChatBusy(false);
   };
+}
+
+function setChatBusy(busy) {
+  chatBusy = busy;
+  chatboxQuickQuestions.forEach((button) => { button.disabled = busy; });
+  const submit = chatboxForm?.querySelector('[type="submit"]');
+  if (submit) submit.disabled = busy;
 }
 
 function appendChatMessage(text, sender) {
@@ -671,20 +724,29 @@ function appendChatMessage(text, sender) {
 }
 
 async function handleChatQuestion(question, presetKey = '') {
+  if (chatBusy) return;
+  const session = chatSession;
+  setChatBusy(true);
   appendChatMessage(question, 'user');
   chatHistory.push({ sender: 'user', text: question });
 
   const loadingMessage = appendTemporaryLoadingMessage();
-  const reply = await fetchChatReply(question, presetKey);
+  const [reply] = await Promise.all([
+    fetchChatReply(question, presetKey),
+    new Promise((resolve) => setTimeout(resolve, 900))
+  ]);
+  if (session !== chatSession) return;
   loadingMessage.remove();
 
   appendChatMessage(reply, 'bot');
   chatHistory.push({ sender: 'bot', text: reply });
+  setChatBusy(false);
 }
 
 function appendTemporaryLoadingMessage() {
   const message = document.createElement('div');
-  message.className = 'chatbox-message bot';
+  message.className = 'chatbox-message bot chatbox-typing';
+  message.setAttribute('role', 'status');
   message.textContent = translations[currentLanguage]['chat.loading'];
   chatboxMessages.appendChild(message);
   chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
@@ -717,6 +779,10 @@ async function fetchDemoConversation() {
 }
 
 async function fetchChatReply(question, presetKey = '') {
+  if (!presetKey && isChatGreeting(question)) {
+    return translations.id['chat.greeting'];
+  }
+
   if (!chatApiEnabled) {
     return resolveFallbackReply(question, presetKey);
   }
@@ -763,7 +829,32 @@ function resolvePresetAnswer(key) {
   return translations[currentLanguage][map[key]] || translations[currentLanguage]['chat.answers.default'];
 }
 
+const chatGreetings = new Set([
+  'halo', 'hai', 'hi', 'hello', 'hey', 'heyy', 'hii', 'haii', 'hallo',
+  'halo kak', 'hai kak', 'hi kak', 'hello kak', 'halo min', 'hai min',
+  'halo admin', 'hai admin', 'permisi', 'permisi kak',
+  'selamat pagi', 'pagi', 'pagi kak', 'good morning',
+  'selamat siang', 'siang', 'siang kak', 'selamat sore', 'sore', 'sore kak',
+  'selamat malam', 'malam', 'malam kak', 'assalamualaikum', "assalamu'alaikum",
+  'salam', 'apa kabar', 'gimana kabarnya', 'tes', 'test', 'min', 'admin', 'kak',
+  'kak mau tanya', 'min mau tanya', 'halo mau tanya', 'hai mau tanya',
+  'permisi mau tanya'
+]);
+
+function isChatGreeting(question) {
+  const normalized = question.toLowerCase()
+    .replace(/[‘’]/g, "'")
+    .replace(/[.,!?]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return chatGreetings.has(normalized);
+}
+
 function resolveAnswer(question) {
+  if (isChatGreeting(question)) {
+    return translations.id['chat.greeting'];
+  }
+
   const lowerQuestion = question.toLowerCase();
 
   if (lowerQuestion.includes('service') || lowerQuestion.includes('layanan')) {
@@ -791,4 +882,26 @@ function resolveFallbackReply(question, presetKey = '') {
   }
 
   return resolveAnswer(question);
+}
+
+const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+if (revealElements.length > 0) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.18,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach((element) => {
+    revealObserver.observe(element);
+  });
 }
