@@ -1,0 +1,102 @@
+.contact-form-section {
+  margin-top: 24px;
+  scroll-margin-top: 120px;
+}
+
+#contact-form .contact-form-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+}
+
+#contact-form .form-label {
+  color: var(--title);
+  font-weight: 600;
+}
+
+#contact-form .contact-form-control {
+  min-width: 0;
+  min-height: 50px;
+  padding: 13px 16px;
+  border: 1px solid rgba(148, 163, 184, .4);
+  border-radius: 16px;
+  background: var(--bg-soft);
+  color: var(--title);
+  font: inherit;
+  line-height: 1.6;
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+#contact-form .contact-form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+  outline: 0;
+}
+
+#contact-form textarea.contact-form-control {
+  resize: vertical;
+  min-height: 170px;
+}
+
+#contact-form .contact-submit {
+  margin-top: 20px;
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-color: #fff;
+  --bs-btn-focus-shadow-rgb: 10, 132, 255;
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 26px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0a84ff, #60a5fa);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, .22);
+  font: 700 1rem/1.6 'Plus Jakarta Sans', sans-serif;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+#contact-form .contact-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px rgba(37, 99, 235, .3);
+}
+
+#contact-form .contact-submit:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+#contact-form .contact-form-note {
+  margin: 20px 0;
+  font-size: .88rem;
+}
+
+#contact-form .contact-form-status {
+  margin: 20px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  background: var(--accent-soft);
+  color: var(--title);
+}
+
+/* Allow long contact addresses to wrap without changing either card's design. */
+body[data-page="contact"] .contact-layout > .panel,
+body[data-page="contact"] .contact-list a,
+body[data-page="contact"] .contact-list a span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+body[data-page="contact"] .contact-list i { flex-shrink: 0; }
+
+@media (min-width: 768px) {
+  #contact-form .contact-form-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #contact-form .contact-form-message { grid-column: 1 / -1; }
+  #contact-form .contact-submit { width: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  #contact-form .contact-form-control,
+  #contact-form .contact-submit { transition: none; }
+}

@@ -221,7 +221,7 @@ body.light .thema:hover {
   color: #ffffff;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1120px) {
   .navbar-custom {
     width: min(calc(100% - 20px), 1180px);
     align-items: center;

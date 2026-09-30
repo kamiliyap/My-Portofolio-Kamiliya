@@ -1,0 +1,33 @@
+// Bootstrap 5.3.3: official Forms + Buttons, scoped to the contact section.
+// Build instructions: assets/css/vendor/README.md
+@import "bootstrap/scss/functions";
+$enable-dark-mode: false;
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+
+#contact-form {
+  // Variables required by Bootstrap's form controls, inherited only here.
+  --bs-body-font-size: #{$font-size-base};
+  --bs-body-font-weight: #{$font-weight-base};
+  --bs-body-line-height: #{$line-height-base};
+  --bs-body-color: var(--text);
+  --bs-body-bg: var(--bg);
+  --bs-secondary-color: var(--text-soft);
+  --bs-secondary-bg: var(--bg-soft);
+  --bs-border-width: #{$border-width};
+  --bs-border-color: var(--panel-border);
+  --bs-border-radius: #{$border-radius};
+  --bs-border-radius-sm: #{$border-radius-sm};
+  --bs-border-radius-lg: #{$border-radius-lg};
+  --bs-focus-ring-width: #{$focus-ring-width};
+  --bs-focus-ring-opacity: #{$focus-ring-opacity};
+  --bs-focus-ring-color: var(--accent-soft);
+  --bs-form-valid-color: #{$form-valid-color};
+  --bs-form-valid-border-color: #{$form-valid-border-color};
+  --bs-form-invalid-color: #{$form-invalid-color};
+  --bs-form-invalid-border-color: #{$form-invalid-border-color};
+  @import "bootstrap/scss/forms";
+  @import "bootstrap/scss/buttons";
+}
