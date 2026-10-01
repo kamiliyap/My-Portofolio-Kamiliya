@@ -18,9 +18,10 @@ require __DIR__ . '/includes/certifications-data.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/style-navbar.css">
     <link rel="stylesheet" href="assets/css/style-site.css">
-    <link rel="stylesheet" href="assets/css/robot.css">
     <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/robot.js" defer></script>
+    <!-- Anime.js v4 khusus animasi hero; greeting kini berada di robot assistant. -->
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js" defer></script>
+    <script src="assets/js/hero-animation.js" defer></script>
 </head>
 <body data-page="home">
     <?php include 'navbar.html'; ?>
@@ -63,9 +64,39 @@ require __DIR__ . '/includes/certifications-data.php';
                         <div class="hero-blob hero-blob-left"></div>
                         <div class="hero-photo-orbit"></div>
                         <img src="assets/images/Foto.png" alt="Foto Kamiliya" class="hero-dark-image">
+                        <!-- Badge dekoratif mengelilingi foto; foto tetap statis. -->
+                        <div class="hero-photo-badges">
+                            <span class="hero-tech-badge hero-tech-code" aria-hidden="true"><i class="bi bi-code-slash"></i></span>
+                            <span class="hero-tech-badge hero-tech-database" aria-hidden="true"><i class="bi bi-database"></i></span>
+                            <span class="hero-tech-badge hero-tech-device" aria-hidden="true"><i class="bi bi-laptop"></i></span>
+                            <div class="hero-availability">
+                                <span class="hero-availability-dot" aria-hidden="true"></span>
+                                <span class="hero-availability-copy">Terbuka untuk <strong>Peluang Baru</strong></span>
+                            </div>
+                        </div>
                         <span class="hero-spark hero-spark-left"></span>
                     </div>
                 </section>
+
+                <!-- Stats di bawah hero tanpa mengubah posisi konten dan foto hero. -->
+                <dl class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon stat-icon-projects" aria-hidden="true"><i class="bi bi-laptop"></i></span>
+                        <dt data-stat-label="projects">Proyek Selesai</dt><dd>5+</dd>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon stat-icon-experience" aria-hidden="true"><i class="bi bi-mortarboard"></i></span>
+                        <dt data-stat-label="experience">Tahun Pengalaman</dt><dd>1+</dd>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon stat-icon-certifications" aria-hidden="true"><i class="bi bi-award"></i></span>
+                        <dt data-stat-label="certifications">Sertifikasi</dt><dd>5+</dd>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon stat-icon-learning" aria-hidden="true"><i class="bi bi-people"></i></span>
+                        <dt data-stat-label="learning">Belajar & Berkembang</dt><dd>100%</dd>
+                    </div>
+                </dl>
 
                 <section class="project-showcase project-showcase-home">
                     <div class="section-heading split-heading">

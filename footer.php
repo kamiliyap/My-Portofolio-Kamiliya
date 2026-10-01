@@ -1,3 +1,5 @@
+<!-- Komponen assistant baru dipakai bersama di seluruh halaman portfolio. -->
+<?php require __DIR__ . '/includes/robot-assistant.php'; ?>
 <footer class="site-footer">
     <div>
         <p class="footer-brand">Kamiliya</p>

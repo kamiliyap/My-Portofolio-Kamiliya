@@ -221,6 +221,12 @@ body.light .thema:hover {
   color: #ffffff;
 }
 
+/* Ruang untuk menu Analytics tambahan tanpa meluapkan navbar desktop. */
+@media (min-width: 1121px) {
+  .navbar-menu { gap: 8px; }
+  .navbar-custom .nav-link { padding-left: 10px; padding-right: 10px; }
+}
+
 @media (max-width: 1120px) {
   .navbar-custom {
     width: min(calc(100% - 20px), 1180px);
