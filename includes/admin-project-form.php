@@ -1,0 +1,16 @@
+<?php
+$editing = isset($project);
+?>
+<section class="admin-card">
+<?php if ($errors): ?><div class="notice error" role="alert"><ul><?php foreach ($errors as $error): ?><li><?= adminEscape($error) ?></li><?php endforeach; ?></ul></div><?php endif; ?>
+<form class="admin-form" method="post" enctype="multipart/form-data">
+<input type="hidden" name="csrf_token" value="<?= adminEscape(adminToken()) ?>">
+<?php if ($editing): ?><input type="hidden" name="id" value="<?= adminEscape($project['id']) ?>"><?php endif; ?>
+<div class="field"><label for="title">Judul Project <span class="required">*</span></label><input id="title" name="title" maxlength="200" value="<?= adminEscape($values['title']) ?>" placeholder="Masukkan judul project" required></div>
+<div class="field"><label for="description">Deskripsi <span class="required">*</span></label><textarea id="description" name="description" maxlength="10000" placeholder="Ceritakan project kamu" required><?= adminEscape($values['description']) ?></textarea></div>
+<div class="form-columns"><div class="field"><label for="tech">Teknologi <span class="required">*</span></label><input id="tech" name="tech" maxlength="500" value="<?= adminEscape($values['tech']) ?>" placeholder="PHP, MySQL, Bootstrap" required></div><div class="field"><label for="category">Kategori <span class="required">*</span></label><input id="category" name="category" list="categories" maxlength="100" value="<?= adminEscape($values['category']) ?>" placeholder="Pilih atau tulis kategori" required><datalist id="categories"><option value="Web Application"><option value="Company Profile"><option value="Mobile App"><option value="UI/UX Design"><option value="Dashboard"></datalist></div></div>
+<div class="field"><label for="demo_url">Link Video Demo (Opsional)</label><input type="url" id="demo_url" name="demo_url" maxlength="2048" value="<?= adminEscape($values['demo_url'] ?? '') ?>" placeholder="https://drive.google.com/file/d/…/view" <?= $demoEnabled ? '' : 'disabled' ?> aria-describedby="demo-help"><small id="demo-help"><?= $demoEnabled ? 'Google Drive atau YouTube. Pastikan akses video dapat dilihat publik. Kosongkan jika belum ada video demo.' : 'Field akan aktif setelah kolom demo_url ditambahkan melalui phpMyAdmin.' ?></small></div>
+<?php if ($editing): ?><div class="field"><label>File Saat Ini</label><div class="file-card"><div><strong><?= adminEscape(strtoupper(pathinfo($project['file_path'], PATHINFO_EXTENSION))) ?> · File project</strong><small><?= adminEscape(basename($project['file_path'])) ?></small></div><a class="admin-button secondary" href="<?= adminEscape(adminUrl('download-project.php?id=' . $project['id'])) ?>">Download</a></div></div><?php endif; ?>
+<div class="field upload-field"><label for="file"><?= $editing ? 'Ganti File (Opsional)' : 'File Upload *' ?></label><input type="file" id="file" name="file" accept=".pdf,.jpg,.jpeg,.png" <?= $editing ? '' : 'required' ?>><small>PDF, JPG, JPEG, PNG · maksimal 2 MB. <?= $editing ? 'Kosongkan untuk tetap menggunakan file lama.' : '' ?></small></div>
+<div class="form-actions"><a class="admin-button secondary" href="<?= adminEscape(adminUrl('admin/projects.php')) ?>">Batal</a><button class="admin-button" type="submit"><?= $editing ? 'Update Project' : 'Simpan Project' ?></button></div>
+</form></section>

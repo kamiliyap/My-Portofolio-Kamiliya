@@ -1,1 +1,4 @@
 /config/database.local.php
+/config/portfolio.local.php
+/uploads/*
+!/uploads/.htaccess

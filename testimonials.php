@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/style-navbar.css">
     <link rel="stylesheet" href="assets/css/style-site.css">
+    <script src="assets/js/site-theme.js" defer></script>
     <script src="assets/js/theme.js" defer></script>
 </head>
 <body data-page="testimonials">

@@ -143,7 +143,7 @@
     scatterChart.options.scales.x.title.text = text().weeks;
     scatterChart.options.scales.y.title.text = text().complexity;
     scatterChart.data.datasets[0].label = text().complexity;
-    const dark = document.body.classList.contains('light');
+    const dark = document.body.classList.contains('dark');
     const color = dark ? '#d8d5ef' : '#52617c';
     charts.forEach((chart) => {
       chart.options.color = color;

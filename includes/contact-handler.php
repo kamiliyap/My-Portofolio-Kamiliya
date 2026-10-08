@@ -50,13 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ]);
                 $contactSuccess = true;
                 $contactValues = ['name' => '', 'email' => '', 'message' => ''];
-                } catch (Throwable $exception) {
-                    echo '<pre>';
-                    echo 'DATABASE ERROR: ';
-                    echo htmlspecialchars($exception->getMessage());
-                    echo '</pre>';
-                    exit;
-                }
+            } catch (Throwable $exception) {
+                error_log('[Kamiliya contact] ' . get_class($exception) . ' [' . $exception->getCode() . ']: ' . $exception->getMessage());
+                $contactErrors[] = 'database';
+            }
         }
     }
     // Bound session storage even when browser maxlength is bypassed.

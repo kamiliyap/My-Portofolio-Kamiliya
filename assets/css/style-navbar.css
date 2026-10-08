@@ -164,59 +164,59 @@
   display: none;
 }
 
-body.light {
+body.dark {
   color: #020617;
 }
 
-body.light .navbar-custom {
+body.dark .navbar-custom {
   background: rgba(13, 10, 44, 0.72);
   box-shadow: 0 20px 40px rgba(3, 0, 25, 0.42);
   border-color: rgba(232, 121, 249, 0.16);
 }
 
-body.light .navbar-brand,
-body.light .navbar-burger {
+body.dark .navbar-brand,
+body.dark .navbar-burger {
   color: #ffffff;
 }
 
-body.light .navbar-burger {
+body.dark .navbar-burger {
   background: rgba(255, 255, 255, 0.06);
 }
 
-body.light .nav-link {
+body.dark .nav-link {
   color: #dbe7f5;
 }
 
-body.light .nav-link:hover {
+body.dark .nav-link:hover {
   background: rgba(255, 255, 255, 0.06);
   color: #ffffff;
 }
 
-body.light .nav-link.active,
-body.light .language-button.is-active {
+body.dark .nav-link.active,
+body.dark .language-button.is-active {
   background: linear-gradient(135deg, #d946ef, #a855f7);
   box-shadow: 0 12px 28px rgba(168, 85, 247, 0.32);
 }
 
-body.light .thema {
+body.dark .thema {
   color: #ffffff;
 }
 
-body.light .language-switcher {
+body.dark .language-switcher {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(232, 121, 249, 0.16);
 }
 
-body.light .language-button {
+body.dark .language-button {
   color: #dbe7f5;
 }
 
-body.light .language-button:hover {
+body.dark .language-button:hover {
   background: rgba(255, 255, 255, 0.06);
   color: #ffffff;
 }
 
-body.light .thema:hover {
+body.dark .thema:hover {
   background: rgba(255, 255, 255, 0.06);
   color: #ffffff;
 }
@@ -277,7 +277,7 @@ body.light .thema:hover {
     background: rgba(255, 255, 255, 0.52);
   }
 
-  body.light .thema {
+  body.dark .thema {
     background: rgba(255, 255, 255, 0.06);
   }
 }

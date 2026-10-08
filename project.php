@@ -1,7 +1,12 @@
 <?php
+ini_set('display_errors', '0');
 $currentPage = 'projects';
 require __DIR__ . '/includes/portfolio-data.php';
 require __DIR__ . '/includes/portfolio-functions.php';
+require __DIR__ . '/includes/public-projects.php';
+$databaseUnavailable = false;
+$projects = publicProjectCards($projects, $databaseUnavailable);
+header('Cache-Control: no-store');
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -18,6 +23,7 @@ require __DIR__ . '/includes/portfolio-functions.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/style-navbar.css">
     <link rel="stylesheet" href="assets/css/style-site.css">
+    <script src="assets/js/site-theme.js" defer></script>
     <script src="assets/js/theme.js" defer></script>
 </head>
 <body data-page="projects">
@@ -30,6 +36,9 @@ require __DIR__ . '/includes/portfolio-functions.php';
             <p data-i18n="projects.heading.text">Saya menyiapkan studi kasus sederhana dengan fokus pada tampilan profesional, struktur yang rapi, dan kebutuhan user yang jelas.</p>
         </section>
 
+        <?php if ($databaseUnavailable): ?>
+            <p role="status" data-i18n="projects.databaseUnavailable">Project terbaru belum dapat dimuat. Silakan coba kembali.</p>
+        <?php endif; ?>
         <?php renderPortfolioSection($projects); ?>
     </main>
 

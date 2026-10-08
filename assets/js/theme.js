@@ -6,6 +6,11 @@ const languageButtons = document.querySelectorAll('[data-lang]');
 
 const translations = {
   id: {
+    'projects.actions.viewPdf': 'Lihat PDF',
+    'projects.actions.demo': 'Video Demo',
+    'projects.actions.download': 'Unduh Rekap Data',
+    'projects.actions.fileUnavailable': 'File belum tersedia',
+    'projects.databaseUnavailable': 'Project terbaru belum dapat dimuat. Silakan coba kembali.',
     'nav.home': 'Home',
     'nav.about': 'About',
     'nav.projects': 'Projects',
@@ -212,6 +217,11 @@ const translations = {
     'contact.work.text': 'Cocok untuk landing page, company profile, portofolio personal, atau perapihan UI website yang sudah ada.'
   },
   en: {
+    'projects.actions.viewPdf': 'View PDF',
+    'projects.actions.demo': 'Watch Demo',
+    'projects.actions.download': 'Download Summary',
+    'projects.actions.fileUnavailable': 'File not available yet',
+    'projects.databaseUnavailable': 'Recent projects could not be loaded. Please try again.',
     'nav.home': 'Home',
     'nav.about': 'About',
     'nav.projects': 'Projects',
@@ -503,28 +513,17 @@ const chatConversations = {
 if (btn) {
   const moon = btn.querySelector('.bi-moon');
   const sun = btn.querySelector('.bi-sun');
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-
-  setTheme(savedTheme);
-
-  btn.addEventListener('click', () => {
-    const newTheme = document.body.classList.contains('light') ? 'dark' : 'light';
-    setTheme(newTheme);
-  });
-
-  function setTheme(theme) {
+  const siteTheme = window.KamiliyaTheme;
+  btn.addEventListener('click', () => siteTheme.toggle());
+  siteTheme.subscribe(theme => {
     if (theme === 'light') {
-      document.body.classList.add('light');
       moon.style.display = 'inline';
       sun.style.display = 'none';
     } else {
-      document.body.classList.remove('light');
       sun.style.display = 'inline';
       moon.style.display = 'none';
     }
-
-    localStorage.setItem('theme', theme);
-  }
+  });
 }
 
 if (navbar && navbarBurger) {

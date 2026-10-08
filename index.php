@@ -19,6 +19,7 @@ require __DIR__ . '/includes/portfolio-functions.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/style-navbar.css">
     <link rel="stylesheet" href="assets/css/style-site.css">
+    <script src="assets/js/site-theme.js" defer></script>
     <script src="assets/js/theme.js" defer></script>
     <!-- Anime.js v4 khusus animasi hero; greeting kini berada di robot assistant. -->
     <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js" defer></script>

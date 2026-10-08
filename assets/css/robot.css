@@ -78,22 +78,22 @@
   mix-blend-mode: screen;
   opacity: .08;
 }
-/* The existing site uses body.light for its visually dark theme. */
-body.light .portfolio-robot .robot-sprite {
+/* The existing site uses body.dark for its visually dark theme. */
+body.dark .portfolio-robot .robot-sprite {
   filter: brightness(1.08) saturate(1.12)
     drop-shadow(0 0 5px rgba(0, 200, 255, .6))
     drop-shadow(0 0 10px rgba(0, 200, 255, .35))
     drop-shadow(0 0 16px rgba(80, 120, 255, .22));
 }
-body.light .robot-body::before { opacity: .8; }
-body.light .robot-body::after { opacity: .55; }
+body.dark .robot-body::before { opacity: .8; }
+body.dark .robot-body::after { opacity: .55; }
 .portfolio-robot:is([data-state="love"], [data-state="happy"]) .robot-body::before {
   filter: hue-rotate(115deg) saturate(1.2);
 }
 .portfolio-robot:is([data-state="love"], [data-state="happy"]) .robot-sprite {
   filter: drop-shadow(0 0 5px rgba(244, 114, 182, .3));
 }
-body.light .portfolio-robot:is([data-state="love"], [data-state="happy"]) .robot-sprite {
+body.dark .portfolio-robot:is([data-state="love"], [data-state="happy"]) .robot-sprite {
   filter: brightness(1.08) drop-shadow(0 0 6px rgba(244, 114, 182, .65))
     drop-shadow(0 0 13px rgba(251, 146, 160, .4));
 }
@@ -136,7 +136,7 @@ body.light .portfolio-robot:is([data-state="love"], [data-state="happy"]) .robot
   font-size: 18px;
   animation: robotHeart 1.2s ease-out forwards;
 }
-body.light .robot-heart {
+body.dark .robot-heart {
   filter: drop-shadow(0 0 4px rgba(244, 114, 182, .8));
 }
 @keyframes robotGlowSurprised {

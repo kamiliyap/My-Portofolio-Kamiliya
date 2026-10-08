@@ -19,9 +19,9 @@
 .assistant-summon { position: fixed; right: calc(22px + 112px + 20px); bottom: max(88px, calc(env(safe-area-inset-bottom) + 88px)); z-index: 2401; min-height: 38px; padding: 7px 10px; border: 1px solid rgba(118, 151, 241, 0.28); border-radius: 10px; background: var(--panel, #f8fbff); color: var(--title, #17203d); box-shadow: 0 8px 24px rgba(73, 88, 165, 0.15); font: inherit; font-size: 0.75rem; cursor: pointer; }
 .assistant-summon[hidden] { display: none !important; }
 .portfolio-assistant button:focus-visible, .portfolio-assistant a:focus-visible, .assistant-summon:focus-visible { outline: 3px solid #7aaaff; outline-offset: 3px; }
-body.light .assistant-bubble { background: rgba(22, 20, 58, 0.97); border-color: rgba(175, 149, 250, 0.28); }
-body.light .assistant-character img { filter: drop-shadow(0 0 14px rgba(148, 114, 255, 0.65)); }
-body.light .assistant-heading { color: #a9c9ff; }
+body.dark .assistant-bubble { background: rgba(22, 20, 58, 0.97); border-color: rgba(175, 149, 250, 0.28); }
+body.dark .assistant-character img { filter: drop-shadow(0 0 14px rgba(148, 114, 255, 0.65)); }
+body.dark .assistant-heading { color: #a9c9ff; }
 @media (max-width: 768px) {
   .portfolio-assistant { left: auto; right: 16px; bottom: max(110px, calc(env(safe-area-inset-bottom) + 110px)); width: min(280px, calc(100vw - 32px)); }
   .assistant-summon { right: calc(16px + 54px + 20px); bottom: max(110px, calc(env(safe-area-inset-bottom) + 110px)); min-height: 34px; padding: 6px 8px; font-size: 11px; }

@@ -225,7 +225,7 @@ footer {
 .stat-icon-experience { color: #9560ed; background: rgba(149, 96, 237, 0.12); }
 .stat-icon-certifications { color: #ed5794; background: rgba(237, 87, 148, 0.1); }
 .stat-icon-learning { color: #10b981; background: rgba(16, 185, 129, 0.1); }
-body.light .hero-stats { background: rgba(22, 20, 58, 0.84); border-color: rgba(165, 180, 252, 0.18); box-shadow: 0 14px 36px rgba(2, 0, 24, 0.2); }
+body.dark .hero-stats { background: rgba(22, 20, 58, 0.84); border-color: rgba(165, 180, 252, 0.18); box-shadow: 0 14px 36px rgba(2, 0, 24, 0.2); }
 
 @media (max-width: 1024px) {
   .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 12px; }
@@ -339,14 +339,14 @@ body.light .hero-stats { background: rgba(22, 20, 58, 0.84); border-color: rgba(
   box-shadow: 0 0 0 5px rgba(16, 185, 129, 0.15);
 }
 
-/* body.light adalah selector tema gelap yang digunakan website saat ini. */
-body.light .hero-tech-badge,
-body.light .hero-availability {
+/* body.dark adalah selector tema gelap yang sama untuk public dan admin. */
+body.dark .hero-tech-badge,
+body.dark .hero-availability {
   background: rgba(22, 20, 58, 0.94);
   border-color: rgba(165, 180, 252, 0.22);
   box-shadow: 0 8px 24px rgba(2, 0, 24, 0.24);
 }
-body.light .hero-tech-badge { color: #93c5fd; }
+body.dark .hero-tech-badge { color: #93c5fd; }
 
 @media (max-width: 720px) {
   .hero-photo-badges { max-width: 320px; height: 320px; }
@@ -1907,7 +1907,7 @@ body[data-page="projects"] .project-tags span {
   min-height: 48px;
 }
 
-body.light {
+body.dark {
   --bg: #08081f;
   --bg-soft: rgba(10, 10, 36, 0.8);
   --panel: rgba(12, 10, 44, 0.66);
@@ -1924,7 +1924,7 @@ body.light {
     linear-gradient(180deg, #0c0a2d 0%, #09071f 100%);
 }
 
-body.light::before {
+body.dark::before {
   background-image:
     radial-gradient(circle at 14% 14%, rgba(255, 255, 255, 0.04), transparent 14%),
     radial-gradient(circle at 84% 68%, rgba(255, 0, 212, 0.08), transparent 16%),
@@ -1937,7 +1937,7 @@ body.light::before {
   opacity: 0.9;
 }
 
-body.light::after {
+body.dark::after {
   content: '';
   position: fixed;
   inset: 0;
@@ -1950,7 +1950,7 @@ body.light::after {
   opacity: 0.78;
 }
 
-body.light .hero-banner {
+body.dark .hero-banner {
   border-color: rgba(236, 72, 153, 0.14);
   background:
     radial-gradient(circle at 20% 50%, rgba(96, 165, 250, 0.12), transparent 20%),
@@ -1959,7 +1959,7 @@ body.light .hero-banner {
   box-shadow: 0 26px 60px rgba(3, 1, 24, 0.52);
 }
 
-body.light .portfolio-hero {
+body.dark .portfolio-hero {
   border-color: rgba(236, 72, 153, 0.14);
   background:
     radial-gradient(circle at 20% 50%, rgba(96, 165, 250, 0.12), transparent 20%),
@@ -1967,50 +1967,50 @@ body.light .portfolio-hero {
     linear-gradient(135deg, rgba(13, 10, 44, 0.82), rgba(17, 12, 58, 0.76));
 }
 
-body.light .portfolio-hero .eyebrow,
-body.light .portfolio-hero .hero-dark-content h1,
-body.light .portfolio-hero .hero-dark-text,
-body.light .portfolio-hero .hero-socials span {
+body.dark .portfolio-hero .eyebrow,
+body.dark .portfolio-hero .hero-dark-content h1,
+body.dark .portfolio-hero .hero-dark-text,
+body.dark .portfolio-hero .hero-socials span {
   color: #f8fafc;
 }
 
-body.light .portfolio-hero .eyebrow {
+body.dark .portfolio-hero .eyebrow {
   background: rgba(99, 102, 241, 0.14);
   border-color: rgba(129, 140, 248, 0.22);
 }
 
-body.light .portfolio-hero .hero-intro {
+body.dark .portfolio-hero .hero-intro {
   color: rgba(248, 250, 252, 0.92);
 }
 
-body.light .portfolio-hero .hero-dark-summary {
+body.dark .portfolio-hero .hero-dark-summary {
   border-left-color: #e879f9;
 }
 
-body.light .portfolio-hero .hero-dark-text,
-body.light .portfolio-hero .hero-socials span {
+body.dark .portfolio-hero .hero-dark-text,
+body.dark .portfolio-hero .hero-socials span {
   color: rgba(226, 232, 240, 0.84);
 }
 
-body.light .portfolio-hero .hero-social-links a,
-body.light .hero-secondary-link {
+body.dark .portfolio-hero .hero-social-links a,
+body.dark .hero-secondary-link {
   background: rgba(255, 255, 255, 0.04);
   color: #f8fafc;
   border-color: rgba(255, 255, 255, 0.16);
 }
 
-body.light .hero-download-link {
+body.dark .hero-download-link {
   background: linear-gradient(135deg, rgba(251, 191, 36, 0.96), rgba(249, 115, 22, 0.94));
   color: #ffffff;
   border-color: rgba(251, 191, 36, 0.6);
   box-shadow: 0 16px 32px rgba(249, 115, 22, 0.28);
 }
 
-body.light .hero-download-link:hover {
+body.dark .hero-download-link:hover {
   background: linear-gradient(135deg, rgba(252, 211, 77, 1), rgba(249, 115, 22, 0.98));
 }
 
-body.light .certification-entry {
+body.dark .certification-entry {
   border-color: rgba(232, 121, 249, 0.14);
   background:
     radial-gradient(circle at top right, rgba(168, 85, 247, 0.14), transparent 32%),
@@ -2018,39 +2018,39 @@ body.light .certification-entry {
   box-shadow: 0 20px 40px rgba(5, 2, 24, 0.28);
 }
 
-body.light .certification-entry:hover {
+body.dark .certification-entry:hover {
   border-color: rgba(192, 132, 252, 0.32);
   box-shadow: 0 24px 48px rgba(12, 7, 40, 0.36);
 }
 
-body.light .certification-badge {
+body.dark .certification-badge {
   background: linear-gradient(135deg, rgba(129, 140, 248, 0.26), rgba(217, 70, 239, 0.22));
   color: #f8fafc;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-body.light .certification-copy h3,
-body.light .certification-meta-list strong,
-body.light .certifications-home h2 {
+body.dark .certification-copy h3,
+body.dark .certification-meta-list strong,
+body.dark .certifications-home h2 {
   color: #f8fafc;
 }
 
-body.light .certifications-intro,
-body.light .certification-meta-list span {
+body.dark .certifications-intro,
+body.dark .certification-meta-list span {
   color: rgba(226, 232, 240, 0.82);
 }
 
-body.light .certification-meta-list p {
+body.dark .certification-meta-list p {
   border-top-color: rgba(255, 255, 255, 0.08);
 }
 
-body.light .certification-button.is-disabled {
+body.dark .certification-button.is-disabled {
   background: rgba(255, 255, 255, 0.08);
   color: rgba(226, 232, 240, 0.72);
   border-color: rgba(255, 255, 255, 0.08);
 }
 
-body.light .hero-banner::before {
+body.dark .hero-banner::before {
   width: 400px;
   height: 400px;
   left: -120px;
@@ -2062,7 +2062,7 @@ body.light .hero-banner::before {
   animation: none;
 }
 
-body.light .hero-banner::after {
+body.dark .hero-banner::after {
   width: 480px;
   height: 240px;
   right: -70px;
@@ -2079,92 +2079,92 @@ body.light .hero-banner::after {
   animation: none;
 }
 
-body.light .hero-blob-right,
-body.light .hero-blob-left {
+body.dark .hero-blob-right,
+body.dark .hero-blob-left {
   background: radial-gradient(circle at center, rgba(236, 72, 153, 0.14), rgba(168, 85, 247, 0.04) 68%, transparent 72%);
 }
 
-body.light .hero-dots {
+body.dark .hero-dots {
   opacity: 0.35;
   background-image: radial-gradient(circle, rgba(249, 168, 212, 0.9) 1.5px, transparent 1.7px);
 }
 
-body.light .hero-dark-summary {
+body.dark .hero-dark-summary {
   border-left-color: #e879f9;
 }
 
-body.light .stack-chips span,
-body.light .project-tags span {
+body.dark .stack-chips span,
+body.dark .project-tags span {
   color: #bfdbfe;
 }
 
-body.light .profile-photo-placeholder {
+body.dark .profile-photo-placeholder {
   border-color: rgba(148, 163, 184, 0.2);
   background:
     radial-gradient(circle at top, rgba(96, 165, 250, 0.16), transparent 40%),
     linear-gradient(180deg, rgba(30, 41, 59, 0.88), rgba(15, 23, 42, 0.72));
 }
 
-body.light .profile-photo-image,
-body.light .mini-profile-image {
+body.dark .profile-photo-image,
+body.dark .mini-profile-image {
   border-color: rgba(148, 163, 184, 0.16);
 }
 
-body.light .screen-card {
+body.dark .screen-card {
   border-color: rgba(148, 163, 184, 0.16);
   background: linear-gradient(180deg, rgba(30, 41, 59, 0.88), rgba(15, 23, 42, 0.78));
 }
 
-body.light .screen-topbar {
+body.dark .screen-topbar {
   background: rgba(255, 255, 255, 0.04);
 }
 
-body.light .screen-topbar span,
-body.light .screen-line {
+body.dark .screen-topbar span,
+body.dark .screen-line {
   background: rgba(148, 163, 184, 0.22);
 }
 
-body.light .button-secondary,
-body.light .contact-list a,
-body.light .testimonial-card {
+body.dark .button-secondary,
+body.dark .contact-list a,
+body.dark .testimonial-card {
   background: rgba(15, 23, 42, 0.44);
   border-color: rgba(148, 163, 184, 0.12);
 }
 
-body.light .service-item {
+body.dark .service-item {
   border-color: rgba(148, 163, 184, 0.12);
 }
 
-body.light .mini-profile-placeholder {
+body.dark .mini-profile-placeholder {
   border-color: rgba(148, 163, 184, 0.16);
   background:
     linear-gradient(180deg, rgba(30, 41, 59, 0.86), rgba(15, 23, 42, 0.72));
   box-shadow: 0 18px 30px rgba(2, 8, 23, 0.24);
 }
 
-body.light .profile-meta span {
+body.dark .profile-meta span {
   color: #bfdbfe;
   background: rgba(96, 165, 250, 0.12);
 }
 
-body.light .profile-github-link {
+body.dark .profile-github-link {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(232, 121, 249, 0.18);
   color: #f8fafc;
 }
 
-body.light .profile-github-link i {
+body.dark .profile-github-link i {
   color: #f0abfc;
 }
 
-body.light .chatbox-close,
-body.light .chatbox-message.bot,
-body.light .chatbox-input {
+body.dark .chatbox-close,
+body.dark .chatbox-message.bot,
+body.dark .chatbox-input {
   background: rgba(15, 23, 42, 0.44);
   border-color: rgba(148, 163, 184, 0.12);
 }
 
-body.light .chatbox-chip {
+body.dark .chatbox-chip {
   color: #bfdbfe;
   background: rgba(96, 165, 250, 0.12);
 }
@@ -2529,3 +2529,7 @@ body.light .chatbox-chip {
     font-size: 0.95rem;
   }
 }
+
+/* PDF actions reuse the existing card buttons without changing other cards. */
+body[data-page="projects"] .project-card-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; }
+body[data-page="projects"] .project-card-actions .small-button { margin-top: 0; }

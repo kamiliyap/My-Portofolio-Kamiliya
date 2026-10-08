@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/css/style-site.css">
     <link rel="stylesheet" href="assets/css/analytics.css">
     <!-- Library khusus halaman Analytics; hero-animation.js tidak dimuat di sini. -->
+    <script src="assets/js/site-theme.js" defer></script>
     <script src="assets/js/theme.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js" defer></script>

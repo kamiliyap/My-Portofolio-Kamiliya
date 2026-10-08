@@ -1,0 +1,11 @@
+# Apache 2.4: keep repository metadata out of HTTP responses.
+<If "%{REQUEST_URI} =~ m#(?i)(^|/)\.git(/|$)#">
+    Require all denied
+</If>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule (^|/)\.git(?:/|$) - [F,L,NC]
+</IfModule>
+<FilesMatch "(?i)^\.git">
+    Require all denied
+</FilesMatch>

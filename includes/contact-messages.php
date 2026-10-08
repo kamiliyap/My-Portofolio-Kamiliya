@@ -2,7 +2,7 @@
 return [
     'id' => [
         'success' => 'Pesan berhasil dikirim. Terima kasih, saya akan segera menghubungi Anda.',
-        'database' => 'Pesan belum dapat dikirim. Silakan coba kembali.',
+        'database' => 'Terjadi kesalahan. Silakan coba lagi.',
         'csrf' => 'Sesi form sudah berubah. Silakan periksa isian dan kirim kembali.',
         'nameRequired' => 'Nama wajib diisi.',
         'nameLength' => 'Nama maksimal 100 karakter.',
@@ -14,7 +14,7 @@ return [
     ],
     'en' => [
         'success' => 'Message sent successfully. Thank you, I will get back to you soon.',
-        'database' => 'Your message could not be sent. Please try again.',
+        'database' => 'An error occurred. Please try again.',
         'csrf' => 'Your form session has changed. Please review your entries and submit again.',
         'nameRequired' => 'Name is required.',
         'nameLength' => 'Name must be no more than 100 characters.',

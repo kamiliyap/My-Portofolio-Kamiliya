@@ -22,6 +22,7 @@ require __DIR__ . '/includes/contact-handler.php';
     <link rel="stylesheet" href="assets/css/vendor/bootstrap-contact.css">
     <link rel="stylesheet" href="assets/css/contact-form.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/site-theme.js" defer></script>
     <script src="assets/js/theme.js" defer></script>
     <script src="assets/js/contact-form.js" defer></script>
 </head>
